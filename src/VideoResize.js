@@ -99,8 +99,7 @@ export default class VideoResize {
 
   handleClick (evt) {
     if (evt.target === this.quill.root) {
-
-      const videos = this.quill.root.querySelectorAll('iframe')
+      const videos = this.quill.root.querySelectorAll(this.options.tagName)
 
       for (let i = 0; i <videos.length; ++i) {
         const rect = videos[i].getBoundingClientRect()
@@ -117,7 +116,7 @@ export default class VideoResize {
           continue
         }
 
-        if (videos[i] && videos[i].tagName && videos[i].tagName.toUpperCase() === 'IFRAME') {
+        if (videos[i] && videos[i].tagName && videos[i].tagName.toLowerCase() === this.options.tagName) {
 
 
           if (this.vid === videos[i]) {

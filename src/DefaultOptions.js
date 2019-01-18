@@ -4,6 +4,7 @@ export default {
     'Toolbar',
     'Resize',
   ],
+  tagName: 'iframe',
   overlayStyles: {
     position: 'absolute',
     boxSizing: 'border-box',
